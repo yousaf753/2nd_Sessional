@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'hard.dart';
+import 'dart:async';
 import 'main_page.dart';
 import 'dart:io';
 import 'hard.dart';
@@ -131,11 +132,25 @@ class _gussState extends State<guss> {
           return alert;
         },
       );
+      setState(() {
+        Timer(Duration(seconds: 1), ()=>Navigator.push(context, MaterialPageRoute(builder: (context) => hard())));
+      });
     }
     else
     {
+      AlertDialog alert = AlertDialog(
+        title: Text(" You pickup the Wrong Dice", style: TextStyle(
+            fontSize: 20.0, fontWeight: FontWeight.bold, color: Colors.green),),
+      );
+
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return alert;
+        },
+      );
       setState(() {
-        Navigator.push(context, MaterialPageRoute(builder: (context) => hard()));
+        Timer(Duration(seconds: 1), ()=>Navigator.push(context, MaterialPageRoute(builder: (context) => hard())));
       });
     }
   }
