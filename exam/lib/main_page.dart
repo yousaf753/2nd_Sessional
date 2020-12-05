@@ -3,7 +3,9 @@ import 'simple.dart';
 import 'hard.dart';
 import 'about_me.dart';
 import 'dart:io';
+import 'package:simple_animations/simple_animations.dart';
 import 'package:animated_button/animated_button.dart';
+import 'package:supercharged/supercharged.dart';
 class main_page extends StatefulWidget {
   @override
   _main_pageState createState() => _main_pageState();
@@ -64,19 +66,26 @@ class _main_pageState extends State<main_page> {
                  ),
                ],
              ),
-            Container(
-              decoration: BoxDecoration(
-                color: Colors.black26,
-                borderRadius: BorderRadius.circular(20),
-              ),
-              margin: EdgeInsets.only(left: 200,top: 200),
-              child: FlatButton(onPressed: (){
-                setState(() {
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>about()));
-                });
-              }
-                  , child: Text("ABOUT US",style: TextStyle(fontSize: 30,color: Colors.black),)),
-            ),
+            PlayAnimation(
+              tween: 0.0.tweenTo(300),
+              duration: 2.seconds,
+              builder: (context, child, value)
+                {
+                  return
+                  Container(
+                    decoration: BoxDecoration(
+                      color: Colors.black26,
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    margin: EdgeInsets.only(left: 200,top: 200),
+                    child: FlatButton(onPressed: (){
+                      setState(() {
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>about()));
+                      });
+                    }
+                        , child: Text("ABOUT US",style: TextStyle(fontSize: 30,color: Colors.black),)),
+                  );
+                },)
           ],
         ),
       ),
