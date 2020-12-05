@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'simple.dart';
 import 'hard.dart';
 import 'about_me.dart';
+import 'dart:io';
 class main_page extends StatefulWidget {
   @override
   _main_pageState createState() => _main_pageState();
@@ -66,7 +67,7 @@ class _main_pageState extends State<main_page> {
                 color: Colors.black26,
                 borderRadius: BorderRadius.circular(20),
               ),
-              margin: EdgeInsets.only(left: 200,top: 300),
+              margin: EdgeInsets.only(left: 200,top: 200),
               child: FlatButton(onPressed: (){
                 setState(() {
                   Navigator.push(context, MaterialPageRoute(builder: (context)=>about()));
@@ -74,6 +75,12 @@ class _main_pageState extends State<main_page> {
               }
                   , child: Text("ABOUT US",style: TextStyle(fontSize: 30,color: Colors.black),)),
             ),
+            ListTile(
+              title: Text('Exit', style: TextStyle(fontWeight: FontWeight.bold , fontSize: 20),),
+              onTap: () {
+                exit(0);
+              },
+            )
           ],
         ),
       ),

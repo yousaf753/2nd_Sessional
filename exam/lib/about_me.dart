@@ -61,9 +61,19 @@ class _aboutState extends State<about> {
               Text('03002573753', style: TextStyle(fontWeight: FontWeight.bold,fontSize: 30),),
               SizedBox(height: 20,),
               Text('muhammadyousafg51@gmail.com', style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
+              DrawerHeader(
+                padding: EdgeInsets.all(0),
+              ),
+              ListTile(
+                title: Text('Exit', style: TextStyle(fontWeight: FontWeight.bold , fontSize: 20),),
+                onTap: () {
+                  exit(0);
+                },
+              )
             ],
           ),
         ),
+
         floatingActionButton:FloatingActionButton(
           onPressed: (){
             setState(() {

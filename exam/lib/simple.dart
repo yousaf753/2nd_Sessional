@@ -1,4 +1,6 @@
+import 'package:exam/main.dart';
 import 'package:flutter/material.dart';
+import 'dart:io';
 import 'dart:math';
 import 'package:alert_dialog/alert_dialog.dart';
 import 'main_page.dart';
@@ -72,8 +74,19 @@ class _simpleState extends State<simple> {
               }
                   , child: Text("Check Result",style: TextStyle(fontSize: 30,color: Colors.white),)),
             ),
+            DrawerHeader(
+              padding: EdgeInsets.all(0),
+            ),
+            ListTile(
+              title: Text('Exit', style: TextStyle(fontWeight: FontWeight.bold , fontSize: 20),),
+              onTap: () {
+                exit(0);
+              },
+            )
+
           ],
         ),
+
       ),
         floatingActionButton:FloatingActionButton(
           onPressed: (){
