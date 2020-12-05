@@ -3,6 +3,7 @@ import 'main_page.dart';
 import 'dart:math';
 import 'dart:io';
 import 'option_guss.dart';
+import 'dart:async';
 guss correct=guss();
 class hard extends StatefulWidget {
   @override
@@ -57,7 +58,7 @@ class _hardState extends State<hard> {
                 setState(() {
                   rold=Random().nextInt(5)+1;
                   correct.get_correct(rold);
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>guss()));
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>guss()));
                 });
               },
                 child:Image(image: AssetImage('images/dice$rold.jpg')),

@@ -5,6 +5,9 @@ import 'main_page.dart';
 import 'dart:io';
 import 'hard.dart';
 int correct=1;
+int right=0;
+int wrong=0;
+int count=1;
 class guss extends StatefulWidget {
      void get_correct(int a)
      {
@@ -120,26 +123,11 @@ class _gussState extends State<guss> {
     );
   }
   showAlertDialog(BuildContext context,int a) {
-    if (correct == a) {
-      AlertDialog alert = AlertDialog(
-        title: Text("Congratulation you pickup the right Dice", style: TextStyle(
-            fontSize: 20.0, fontWeight: FontWeight.bold, color: Colors.green),),
-      );
-
-      showDialog(
-        context: context,
-        builder: (BuildContext context) {
-          return alert;
-        },
-      );
-      setState(() {
-        Timer(Duration(seconds: 1), ()=>Navigator.push(context, MaterialPageRoute(builder: (context) => hard())));
-      });
-    }
-    else
+    if(count>=5)      {
+      if(right>wrong)
     {
       AlertDialog alert = AlertDialog(
-        title: Text(" You pickup the Wrong Dice", style: TextStyle(
+        title: Text(" Congratulation You Are the Winer ", style: TextStyle(
             fontSize: 20.0, fontWeight: FontWeight.bold, color: Colors.green),),
       );
 
@@ -149,10 +137,68 @@ class _gussState extends State<guss> {
           return alert;
         },
       );
-      setState(() {
-        Timer(Duration(seconds: 1), ()=>Navigator.push(context, MaterialPageRoute(builder: (context) => hard())));
-      });
     }
+      else{
+        AlertDialog alert = AlertDialog(
+          title: Text(" You Loss ", style: TextStyle(
+              fontSize: 20.0, fontWeight: FontWeight.bold, color: Colors.green),),
+        );
+
+        showDialog(
+          context: context,
+          builder: (BuildContext context) {
+            return alert;
+          },
+        );
+      }
+      setState(() {
+        count=1;
+        right=0;
+        wrong=0;
+        Timer(Duration(seconds: 1), ()=>Navigator.push(context, MaterialPageRoute(builder: (context) => main_page())));
+      });
+
+      }
+    else
+      {
+        count++;
+        if (correct == a) {
+          right++;
+          AlertDialog alert = AlertDialog(
+            title: Text("Congratulation you pickup the right Dice", style: TextStyle(
+                fontSize: 20.0, fontWeight: FontWeight.bold, color: Colors.green),),
+          );
+
+          showDialog(
+            context: context,
+            builder: (BuildContext context) {
+              return alert;
+            },
+          );
+          setState(() {
+            Timer(Duration(seconds: 1), ()=>Navigator.push(context, MaterialPageRoute(builder: (context) => hard())));
+          });
+        }
+        else
+        {
+          wrong++;
+          AlertDialog alert = AlertDialog(
+            title: Text(" You pickup the Wrong Dice     Right IS $correct", style: TextStyle(
+                fontSize: 20.0, fontWeight: FontWeight.bold, color: Colors.green),),
+          );
+
+          showDialog(
+            context: context,
+            builder: (BuildContext context) {
+              return alert;
+            },
+          );
+          setState(() {
+            Timer(Duration(seconds: 1), ()=>Navigator.push(context, MaterialPageRoute(builder: (context) => hard())));
+          });
+        }
+      }
+
   }
   Widget setimage(int d)
   {
