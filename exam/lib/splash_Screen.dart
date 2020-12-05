@@ -29,7 +29,6 @@ class _MySplashScreenState extends State<MySplashScreen> {
           Text("M YOUSAF",style: TextStyle(fontSize: 30,color: Colors.white),) ,
           SizedBox( height: 30.0),
         CircularProfileAvatar(
-
         null,child: Image(
             image: AssetImage('images/profile.jpg'),
         ),
