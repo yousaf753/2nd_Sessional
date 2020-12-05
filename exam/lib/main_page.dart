@@ -48,13 +48,12 @@ class _main_pageState extends State<main_page> {
                    }
                        , child: Text("Hard",style: TextStyle(fontSize: 30,color: Colors.white),)),
                  ),
-
                ],
              ),
 
           ],
         ),
-      )
+      ),
     );
   }
 }
