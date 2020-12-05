@@ -2,14 +2,15 @@ import 'package:flutter/material.dart';
 import 'main_page.dart';
 import 'dart:math';
 import 'dart:io';
-int rold=1;
-bool press=true;
+import 'option_guss.dart';
+guss correct=guss();
 class hard extends StatefulWidget {
   @override
   _hardState createState() => _hardState();
 }
 
 class _hardState extends State<hard> {
+  int rold=1;
   @override
   Widget build(BuildContext context) {
     return Scaffold(appBar: AppBar(title: Text("Hard Level"),
@@ -55,28 +56,18 @@ class _hardState extends State<hard> {
               child:FlatButton(onPressed: (){
                 setState(() {
                   rold=Random().nextInt(5)+1;
+                  correct.get_correct(rold);
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>guss()));
                 });
               },
-                child: show(),
+                child:Image(image: AssetImage('images/dice$rold.jpg')),
               ) ,
              ),
            ],
         ),
       ),
-        
     );
   }
-   Widget show()
-   {
-     if(press==true)
-       {
-         return Image(image: AssetImage('images/dice$rold.jpg'));
-       }
-     if(press==false)
-       { press=true;
-         return Image(image: AssetImage('images/profile.jpg'));
-       }
-   }
  }
 
 

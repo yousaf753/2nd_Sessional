@@ -11,37 +11,37 @@ class _aboutState extends State<about> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text("About US"),
-        ),
-        drawer: Drawer(
-          child: ListView(
-            children:<Widget> [
-              DrawerHeader(
-                padding: EdgeInsets.all(0),
-                child: Container(
-                  color: Colors.blue,
-                  child: Padding(
-                    padding: const EdgeInsets.only(top: 100.0),
-                    child: Text('Options', textAlign:TextAlign.left , style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold, color: Colors.white),),
-                  ),
+      appBar: AppBar(
+        title: Text("About US"),
+      ),
+      drawer: Drawer(
+        child: ListView(
+          children:<Widget> [
+            DrawerHeader(
+              padding: EdgeInsets.all(0),
+              child: Container(
+                color: Colors.blue,
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 100.0),
+                  child: Text('Options', textAlign:TextAlign.left , style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold, color: Colors.white),),
                 ),
               ),
-              ListTile(
-                title: Text('Home Screen', style: TextStyle(fontWeight: FontWeight.bold , fontSize: 20),),
-                onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>main_page()));
-                },
-              ),
-              ListTile(
-                title: Text('Exit', style: TextStyle(fontWeight: FontWeight.bold , fontSize: 20),),
-                onTap: () {
-                  exit(0);
-                },
-              )
-            ],
-          ),
+            ),
+            ListTile(
+              title: Text('Home Screen', style: TextStyle(fontWeight: FontWeight.bold , fontSize: 20),),
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>main_page()));
+              },
+            ),
+            ListTile(
+              title: Text('Exit', style: TextStyle(fontWeight: FontWeight.bold , fontSize: 20),),
+              onTap: () {
+                exit(0);
+              },
+            )
+          ],
         ),
+      ),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
