@@ -16,12 +16,16 @@ class _main_pageState extends State<main_page> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            SizedBox(height: 200,),
+            SizedBox(height: 100,),
+            Text('WELOCME' , textAlign: TextAlign.center ,style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold , color: Colors.black) ,),
+            SizedBox(height: 30,),
+            Text("Dice Rolling Fun Game" , style: TextStyle(color: Colors.black, fontSize: 20), ),
+            SizedBox(height: 30,),
           Text("Select Level",style: TextStyle(fontSize: 50,color: Colors.black),),
              SizedBox(
                height: 70,
              ),
-            SizedBox(height: 100,),
+            SizedBox(height: 50,),
              Row(
                mainAxisAlignment: MainAxisAlignment.center,
                children: [

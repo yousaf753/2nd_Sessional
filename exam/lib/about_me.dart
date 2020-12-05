@@ -1,8 +1,13 @@
 import 'main_page.dart';
 import 'package:flutter/material.dart';
 import 'dart:io';
+import 'main_page.dart';
+class about extends StatefulWidget {
+  @override
+  _aboutState createState() => _aboutState();
+}
 
-class about extends StatelessWidget {
+class _aboutState extends State<about> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,7 +63,16 @@ class about extends StatelessWidget {
               Text('muhammadyousafg51@gmail.com', style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
             ],
           ),
-        )
-    );
+        ),
+        floatingActionButton:FloatingActionButton(
+          onPressed: (){
+            setState(() {
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>main_page()));
+            });
+          },
+          child: Icon(Icons.keyboard_return_rounded),
+          backgroundColor: Colors.black,
+        ) );
   }
 }
+
