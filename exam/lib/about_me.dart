@@ -30,7 +30,7 @@ class _aboutState extends State<about> {
               ListTile(
                 title: Text('Home Screen', style: TextStyle(fontWeight: FontWeight.bold , fontSize: 20),),
                 onTap: () {
-                  Navigator.pop(context, MaterialPageRoute(builder: (context) => main_page()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>main_page()));
                 },
               ),
               ListTile(
@@ -61,28 +61,10 @@ class _aboutState extends State<about> {
               Text('03002573753', style: TextStyle(fontWeight: FontWeight.bold,fontSize: 30),),
               SizedBox(height: 20,),
               Text('muhammadyousafg51@gmail.com', style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
-              DrawerHeader(
-                padding: EdgeInsets.all(0),
-              ),
-              ListTile(
-                title: Text('Exit', style: TextStyle(fontWeight: FontWeight.bold , fontSize: 20),),
-                onTap: () {
-                  exit(0);
-                },
-              )
             ],
           ),
         ),
-
-        floatingActionButton:FloatingActionButton(
-          onPressed: (){
-            setState(() {
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>main_page()));
-            });
-          },
-          child: Icon(Icons.keyboard_return_rounded),
-          backgroundColor: Colors.black,
-        ) );
+    );
   }
 }
 

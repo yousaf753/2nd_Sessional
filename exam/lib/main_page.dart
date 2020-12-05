@@ -3,6 +3,7 @@ import 'simple.dart';
 import 'hard.dart';
 import 'about_me.dart';
 import 'dart:io';
+import 'package:animated_button/animated_button.dart';
 class main_page extends StatefulWidget {
   @override
   _main_pageState createState() => _main_pageState();
@@ -45,6 +46,7 @@ class _main_pageState extends State<main_page> {
                    }
                        , child: Text("Simple",style: TextStyle(fontSize: 30,color: Colors.white),)),
                  ),
+
                  Container(
                    height: 50,
                    width: 150,
@@ -75,12 +77,6 @@ class _main_pageState extends State<main_page> {
               }
                   , child: Text("ABOUT US",style: TextStyle(fontSize: 30,color: Colors.black),)),
             ),
-            ListTile(
-              title: Text('Exit', style: TextStyle(fontWeight: FontWeight.bold , fontSize: 20),),
-              onTap: () {
-                exit(0);
-              },
-            )
           ],
         ),
       ),

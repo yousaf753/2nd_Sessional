@@ -16,7 +16,36 @@ class simple extends StatefulWidget {
 class _simpleState extends State<simple> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Scaffold(appBar: AppBar(title: Text("Easy Level"),
+    ),
+        drawer: Drawer(
+          child: ListView(
+            children:<Widget> [
+              DrawerHeader(
+                padding: EdgeInsets.all(0),
+                child: Container(
+                  color: Colors.blue,
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 100.0),
+                    child: Text('Options', textAlign:TextAlign.left , style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold, color: Colors.white),),
+                  ),
+                ),
+              ),
+              ListTile(
+                title: Text('Home Screen', style: TextStyle(fontWeight: FontWeight.bold , fontSize: 20),),
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>main_page()));
+                },
+              ),
+              ListTile(
+                title: Text('Exit', style: TextStyle(fontWeight: FontWeight.bold , fontSize: 20),),
+                onTap: () {
+                  exit(0);
+                },
+              )
+            ],
+          ),
+        ),
       body: Container(
         color: Colors.cyan,
         child: Column(
@@ -74,29 +103,10 @@ class _simpleState extends State<simple> {
               }
                   , child: Text("Check Result",style: TextStyle(fontSize: 30,color: Colors.white),)),
             ),
-            DrawerHeader(
-              padding: EdgeInsets.all(0),
-            ),
-            ListTile(
-              title: Text('Exit', style: TextStyle(fontWeight: FontWeight.bold , fontSize: 20),),
-              onTap: () {
-                exit(0);
-              },
-            )
-
           ],
         ),
 
       ),
-        floatingActionButton:FloatingActionButton(
-          onPressed: (){
-            setState(() {
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>main_page()));
-            });
-          },
-          child: Icon(Icons.keyboard_return_rounded),
-          backgroundColor: Colors.black,
-        )
     );
 
   }
