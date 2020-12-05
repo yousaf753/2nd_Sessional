@@ -16,7 +16,7 @@ class _simpleState extends State<simple> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        color: Colors.grey,
+        color: Colors.cyan,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
