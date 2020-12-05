@@ -43,7 +43,7 @@ class _main_pageState extends State<main_page> {
                    margin: EdgeInsets.only(left: 30),
                    child: FlatButton(onPressed: (){
                      setState(() {
-                       Navigator.push(context, MaterialPageRoute(builder: (context)=>simple()));
+                       Navigator.push(context, MaterialPageRoute(builder: (context)=>hard()));
                      });
                    }
                        , child: Text("Hard",style: TextStyle(fontSize: 30,color: Colors.white),)),
