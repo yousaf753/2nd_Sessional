@@ -13,6 +13,31 @@ class _main_pageState extends State<main_page> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text("Home Screen"),
+      ),
+      drawer: Drawer(
+        child: ListView(
+          children:<Widget> [
+            DrawerHeader(
+              padding: EdgeInsets.all(0),
+              child: Container(
+                color: Colors.blue,
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 100.0),
+                  child: Text('Options', textAlign:TextAlign.left , style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold, color: Colors.white),),
+                ),
+              ),
+            ),
+            ListTile(
+              title: Text('Exit', style: TextStyle(fontWeight: FontWeight.bold , fontSize: 20),),
+              onTap: () {
+                exit(0);
+              },
+            )
+          ],
+        ),
+      ),
       backgroundColor: Colors.white,
       body: Center(
         child: Column(
