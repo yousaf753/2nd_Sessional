@@ -65,9 +65,17 @@ class _simpleState extends State<simple> {
                       left_count=left_count+left_dice;
                     });
                   }
-                    , child: Image(
-                      image: AssetImage('images/dice$left_dice.jpg'),
-                    ),
+                    , child: Container(
+                        width: 150.0,
+                        height: 150.0,
+                        margin: EdgeInsets.only(left: 20),
+                        decoration: new BoxDecoration(
+                            shape: BoxShape.rectangle,
+                            image: new DecorationImage(
+                                fit: BoxFit.fill,
+                                image: AssetImage('images/dice$left_dice.png')
+                            )
+                        )),
                   ),
                 ),
                 Expanded(
@@ -77,9 +85,17 @@ class _simpleState extends State<simple> {
                       right_count=right_count+right_dice;
                     });
                   }
-                    , child: Image(
-                      image: AssetImage('images/dice$right_dice.jpg'),
-                    ),
+                    , child: Container(
+                        width: 150.0,
+                        height: 150.0,
+                        margin: EdgeInsets.only(left: 30),
+                        decoration: new BoxDecoration(
+                            shape: BoxShape.rectangle,
+                            image: new DecorationImage(
+                                fit: BoxFit.fill,
+                                image: AssetImage('images/dice$right_dice.png')
+                            )
+                        )),
                   ),
                 ),
               ],

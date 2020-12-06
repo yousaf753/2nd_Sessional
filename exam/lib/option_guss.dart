@@ -205,7 +205,7 @@ class _gussState extends State<guss> {
     return Image(
       height: 80,
       width: 80,
-      image: AssetImage('images/dice$d.jpg'),
+      image: AssetImage('images/dice$d.png'),
     );
   }
 }

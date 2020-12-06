@@ -61,7 +61,7 @@ class _hardState extends State<hard> {
                       Navigator.push(context, MaterialPageRoute(builder: (context)=>guss()));
                 });
               },
-                child:Image(image: AssetImage('images/dice$rold.jpg')),
+                child:Image(image: AssetImage('images/dice$rold.png')),
               ) ,
              ),
            ],

@@ -99,6 +99,8 @@ class _aboutState extends State<about>
                 ],
               ),
               SizedBox(height: 30,),
+              Text('JOIN ME ON ', style: TextStyle(fontWeight: FontWeight.w900,color: Colors.red,fontSize: 30),),
+              SizedBox(height: 30,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 //mainAxisSize: MainAxisSize.max,
