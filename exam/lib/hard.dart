@@ -44,11 +44,15 @@ class _hardState extends State<hard> {
             ],
           ),
         ),
-      backgroundColor: Colors.grey,
+      backgroundColor: Colors.cyan,
       body: Center(
         child:  Column(
           mainAxisAlignment: MainAxisAlignment.center,
            children: [
+             Text("Role Dice",style: TextStyle(fontSize: 50,color: Colors.black),),
+             SizedBox(
+               height: 70,
+             ),
              Container(
                decoration: BoxDecoration(
                ),
