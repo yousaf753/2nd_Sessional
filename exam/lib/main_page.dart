@@ -3,9 +3,7 @@ import 'simple.dart';
 import 'hard.dart';
 import 'about_me.dart';
 import 'dart:io';
-import 'package:simple_animations/simple_animations.dart';
-import 'package:animated_button/animated_button.dart';
-import 'package:supercharged/supercharged.dart';
+import 'package:animated_widgets/animated_widgets.dart';
 class main_page extends StatefulWidget {
   @override
   _main_pageState createState() => _main_pageState();
@@ -18,74 +16,96 @@ class _main_pageState extends State<main_page> {
       backgroundColor: Colors.white,
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBox(height: 100,),
-            Text('WELOCME' , textAlign: TextAlign.center ,style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold , color: Colors.black) ,),
-            SizedBox(height: 30,),
-            Text("Dice Rolling Fun Game" , style: TextStyle(color: Colors.black, fontSize: 20), ),
-            SizedBox(height: 30,),
-          Text("Select Level",style: TextStyle(fontSize: 50,color: Colors.black),),
-             SizedBox(
-               height: 70,
-             ),
-            SizedBox(height: 50,),
-             Row(
-               mainAxisAlignment: MainAxisAlignment.center,
-               children: [
-                 Container(
-                   height: 50,
-                   width: 150,
-                   decoration: BoxDecoration(
-                     color: Colors.cyan,
-                     borderRadius: BorderRadius.circular(20),
-                   ),
-                   margin: EdgeInsets.only(right: 30),
-                   child: FlatButton(onPressed: (){
-                     setState(() {
-                       Navigator.push(context, MaterialPageRoute(builder: (context)=>simple()));
-                     });
-                   }
-                       , child: Text("Simple",style: TextStyle(fontSize: 30,color: Colors.white),)),
-                 ),
+            TranslationAnimatedWidget(
 
-                 Container(
-                   height: 50,
-                   width: 150,
-                   decoration: BoxDecoration(
-                     color: Colors.cyan,
-                     borderRadius: BorderRadius.circular(20),
-                   ),
-                   margin: EdgeInsets.only(left: 30),
-                   child: FlatButton(onPressed: (){
-                     setState(() {
-                       Navigator.push(context, MaterialPageRoute(builder: (context)=>hard()));
-                     });
-                   }
-                       , child: Text("Hard",style: TextStyle(fontSize: 30,color: Colors.white),)),
-                 ),
-               ],
-             ),
-            PlayAnimation(
-              tween: 0.0.tweenTo(300),
-              duration: 2.seconds,
-              builder: (context, child, value)
-                {
-                  return
-                  Container(
-                    decoration: BoxDecoration(
-                      color: Colors.black26,
-                      borderRadius: BorderRadius.circular(20),
+                values: [
+                  Offset(0, 200),
+                  Offset(0, 250),
+                  Offset(0, 0)
+                ],
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    SizedBox(height: 100,),
+                    Text('WELOCME' , textAlign: TextAlign.center ,style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold , color: Colors.black) ,),
+                    SizedBox(height: 30,),
+                    Text("Dice Rolling Fun Game" , style: TextStyle(color: Colors.black, fontSize: 20), ),
+                    SizedBox(height: 30,),
+                    Text("Select Level",style: TextStyle(fontSize: 50,color: Colors.black),),
+                    SizedBox(
+                      height: 70,
                     ),
-                    margin: EdgeInsets.only(left: 200,top: 200),
-                    child: FlatButton(onPressed: (){
-                      setState(() {
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>about()));
-                      });
-                    }
-                        , child: Text("ABOUT US",style: TextStyle(fontSize: 30,color: Colors.black),)),
-                  );
-                },)
+                  ],
+                ),
+            ),
+            SizedBox(height: 50,),
+            TranslationAnimatedWidget.tween(
+              translationDisabled: Offset(0, 200),
+              translationEnabled: Offset(0, 0),
+              child:
+              OpacityAnimatedWidget.tween(
+                  opacityDisabled: 0,
+                  opacityEnabled: 1,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        height: 50,
+                        width: 150,
+                        decoration: BoxDecoration(
+                          color: Colors.cyan,
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        margin: EdgeInsets.only(right: 30),
+                        child: FlatButton(onPressed: (){
+                          setState(() {
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>simple()));
+                          });
+                        }
+                            , child: Text("Simple",style: TextStyle(fontSize: 30,color: Colors.white),)),
+                      ),
+
+                      Container(
+                        height: 50,
+                        width: 150,
+                        decoration: BoxDecoration(
+                          color: Colors.cyan,
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        margin: EdgeInsets.only(left: 30),
+                        child: FlatButton(onPressed: (){
+                          setState(() {
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>hard()));
+                          });
+                        }
+                            , child: Text("Hard",style: TextStyle(fontSize: 30,color: Colors.white),)),
+                      ),
+                    ],
+                  ), /* your widget */
+              ),
+            ),
+            ScaleAnimatedWidget.tween(
+              duration: Duration(milliseconds: 600),
+              scaleDisabled: 0.5,
+              scaleEnabled: 1,
+              child:   Container(
+                decoration: BoxDecoration(
+                  color: Colors.black26,
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                margin: EdgeInsets.only(left: 200,top: 200),
+                child: FlatButton(onPressed: (){
+                  setState(() {
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>about()));
+                  });
+                }
+                    , child: Text("ABOUT US",style: TextStyle(fontSize: 30,color: Colors.black),)),
+              )
+            ),
+
           ],
         ),
       ),

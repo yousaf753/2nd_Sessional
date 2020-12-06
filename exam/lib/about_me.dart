@@ -7,7 +7,8 @@ class about extends StatefulWidget {
   _aboutState createState() => _aboutState();
 }
 
-class _aboutState extends State<about> {
+class _aboutState extends State<about>
+{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
